@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.26430.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1_HelloWorld", "1_HelloWorld\1_HelloWorld.csproj", "{F8FA3450-87AE-4711-B6AD-F5DEAF9F687A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2_CRUDOperations_SQL", "CRUDOperations_SQL\2_CRUDOperations_SQL.csproj", "{2E625CAB-31E9-4E47-A48E-2E6152B105DC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2_BasicCRUDOperations", "2_BasicCRUDOperations\2_BasicCRUDOperations.csproj", "{8E236D9F-1CE9-4AAF-833C-50B9152917C5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{F8FA3450-87AE-4711-B6AD-F5DEAF9F687A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F8FA3450-87AE-4711-B6AD-F5DEAF9F687A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F8FA3450-87AE-4711-B6AD-F5DEAF9F687A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2E625CAB-31E9-4E47-A48E-2E6152B105DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2E625CAB-31E9-4E47-A48E-2E6152B105DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2E625CAB-31E9-4E47-A48E-2E6152B105DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2E625CAB-31E9-4E47-A48E-2E6152B105DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E236D9F-1CE9-4AAF-833C-50B9152917C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E236D9F-1CE9-4AAF-833C-50B9152917C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E236D9F-1CE9-4AAF-833C-50B9152917C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E236D9F-1CE9-4AAF-833C-50B9152917C5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
