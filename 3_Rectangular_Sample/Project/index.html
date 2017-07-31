@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<meta charset="utf-8"/>
+	<title>Restangular CRUD</title>
+	<script>document.write('<base href="' + document.location + '" />');</script>
+	<link rel="stylesheet" href="http://getbootstrap.com/2.3.2/assets/css/bootstrap.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.4/angular.js"></script>
+	<script src="http://code.angularjs.org/1.2.4/angular-route.js"></script>
+	<script type="text/javascript"
+	        src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.4/underscore-min.js"></script>
+	<script type="text/javascript" src="restangular.js"></script>
+	<script src="app.js"></script>
+</head>
+
+<body ng-app="user">
+
+<div ng-view></div>
+
+<!-- CACHE FILE: users.list.html -->
+<script type="text/ng-template" id="users.list.html">
+	<input type="text" ng-model="search" class="search-query" placeholder="Search">
+
+	<h3>Users</h3>
+	<table class="table table-hover">
+		<thead>
+		<tr>
+			<th>First name</th>
+			<th>Last name</th>
+			<th><a href="#/new"><i class="icon-plus-sign"></i></a></th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr ng-repeat="user in users | filter:search | orderBy:'name'" ng-show="user._id.$oid">
+			<td>{{user.firstname}}</td>
+			<td>{{user.lastname}}</td>
+			<td>
+				<a href="#/edit/{{user._id.$oid}}"><i class="icon-pencil"></i></a>
+			</td>
+		</tr>
+		</tbody>
+	</table>
+
+	<h3>Groups</h3>
+	<table class="table table-hover">
+		<thead>
+		<tr>
+			<th>Name group</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr ng-repeat="group in groups | filter:search | orderBy:'name'" ng-show="group._id.$oid">
+			<td>{{group.name}}</td>
+		</tr>
+		</tbody>
+	</table>
+</script>
+
+<!-- CACHE FILE: users.detail.html -->
+<script type="text/ng-template" id="users.detail.html">
+	<form name="myForm" class="form-horizontal">
+
+		<div class="control-group" ng-class="{error: myForm.firstname.$invalid}">
+			<label class="control-label" for="firstname">First name</label>
+
+			<div class="controls">
+				<input type="text" name="firstname" ng-model="user.firstname" required>
+			</div>
+		</div>
+
+		<div class="control-group" ng-class="{error: myForm.lastname.$invalid}">
+			<label class="control-label" for="lastname">Last name</label>
+
+			<div class="controls">
+				<textarea name="lastname" ng-model="user.lastname" required></textarea>
+			</div>
+		</div>
+
+		<div class="control-group" ng-class="{error: myForm.group.$invalid}">
+			<label class="control-label" for="group">Group</label>
+
+			<div class="controls">
+				<select ng-model="user.group" required name="group"
+				        ng-options="group._id.$oid as group.name for group in groups">
+				</select>
+			</div>
+		</div>
+
+		<br>
+		<a href="#/" class="btn">Cancel</a>
+		<button ng-click="save()" ng-disabled="isClean() || myForm.$invalid"
+		        class="btn btn-primary">Save
+		</button>
+		<button ng-click="destroy()"
+		        ng-show="user._id" class="btn btn-danger">Delete
+		</button>
+	</form>
+
+	<pre>$scope.user = {{user|json}}</pre>
+	<pre>$scope.groups = {{groups|json}}</pre>
+</script>
+
+
+</body>
+
+</html>
